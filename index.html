@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Landing Section -->
+    <section class="landing-section">
+        <div class="container">
+            <h1>Smart Resume Builder</h1>
+            <p class="subheader">Create a professional resume in minutes – no signup, no hassle.</p>
+            <button class="cta-button" onclick="scrollToBuilder()">Get Started</button>
+
+            <div class="steps-container">
+                <div class="step">
+                    <i class="fas fa-user-edit"></i>
+                    <h3>Step 1</h3>
+                    <p>Fill out your details</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-eye"></i>
+                    <h3>Step 2</h3>
+                    <p>Preview your resume live</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-download"></i>
+                    <h3>Step 3</h3>
+                    <p>Download or copy</p>
+                </div>
+            </div>
+
+            <div class="features-container">
+                <div class="feature">
+                    <i class="fas fa-gift"></i>
+                    <h4>Free</h4>
+                    <p>No hidden costs</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Fast</h4>
+                    <p>Quick and easy</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4>PDF Export</h4>
+                    <p>Download anytime</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Mobile Friendly</h4>
+                    <p>Works everywhere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Builder Section -->
+    <section id="resume-builder" class="builder-section">
+        <div class="container">
+            <div class="builder-grid">
+                <!-- Form Section -->
+                <div class="form-container">
+                    <h2>Create Your Resume</h2>
+                    <form id="resume-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="education">Education</label>
+                            <textarea id="education" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="skills">Skills (comma separated)</label>
+                            <input type="text" id="skills" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projects">Projects (one per line)</label>
+                            <textarea id="projects" rows="4" required></textarea>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" onclick="generateResume()" class="primary-button">Generate
+                                Resume</button>
+                            <button type="button" onclick="downloadPDF()" class="secondary-button">Download PDF</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-container">
+                    <h2>Resume Preview</h2>
+                    <div id="resume-preview" class="resume-preview">
+                        <div class="preview-placeholder">
+                            <i class="fas fa-file-alt"></i>
+                            <p>Your resume preview will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
